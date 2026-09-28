@@ -204,3 +204,23 @@ Kubernetes는 내부 DNS 서버(CoreDNS)를 가지고 있어서, Service 이름�
 </div>
 </details>
 <br>
+
+<details>
+<summary>10강 NodePort Service</summary>
+<div markdown="10">
+작업 1: NodePort Service 생성<br>
+작업 2: NodePort로 외부 접근<br>
+- Deployment가 없다면 먼저 생성<br>
+kubectl apply -f nginx-deployment.yaml
+kubectl get pods -l app=nginx  # Running 상태 확인<br>
+- Service 생성<br>
+kubectl apply -f nginx-service-nodeport.yaml<br>
+
+# 브라우저에서 접근 
+http://localhost:30080
+
+# 터미널에서 테스트
+curl http://localhost:30080
+</div>
+</details>
+<br>
