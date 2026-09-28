@@ -150,3 +150,57 @@ Deployment를 사용하는 이유:
 </div>
 </details>
 <br>
+<details>
+<summary>9강 ClusterIP Service</summary>
+<div markdown="9">
+왜 Service가 필요한가요?<br>
+Pod는 일시적입니다. 삭제되고 다시 만들어지면 IP 주소가 바뀝니다.
+
+Service의 역할:
+<br>고정된 접점 제공: Pod가 바뀌어도 Service 이름/IP는 유지
+<br>로드 밸런싱: 여러 Pod에 트래픽 분산
+<br>서비스 디스커버리: 이름으로 Pod를 찾을 수 있음
+
+Service 테스트
+
+# Deployment가 없다면 먼저 생성
+kubectl apply -f nginx-deployment.yaml
+kubectl get pods -l app=nginx  # Running 상태 확인
+
+# Service 생성
+kubectl apply -f nginx-service-clusterip.yaml
+
+
+# Service 확인
+kubectl get services<br>
+kubectl get svc # 또는 줄여서
+
+# Service 상세 정보 (Endpoints 확인)
+kubectl describe service nginx-service
+
+
+# 클러스터 내부에서 테스트 (임시 Pod 사용)
+kubectl run curl-test --image=curlimages/curl -it --rm --restart=Never -- curl nginx-service
+
+🔍 명령어 해설:
+
+run curl-test: curl-test라는 이름의 Pod 생성
+
+--image=curlimages/curl: curl이 설치된 이미지 사용
+
+-it: 인터랙티브 + TTY
+
+--rm: 명령 실행 후 Pod 자동 삭제
+
+--restart=Never: Pod가 종료되면 재시작하지 않음 (일회성 실행)
+
+-- curl nginx-service: Pod 안에서 curl 실행
+
+⚠️ --restart=Never 옵션이 중요합니다!
+이 옵션이 없으면 Pod가 CrashLoopBackOff 상태가 될 수 있습니다. curl은 한 번 실행하고 종료되는데, Kubernetes가 계속 재시작하려고 하기 때문입니다.
+
+🤔 왜 nginx-service라는 이름으로 접속할 수 있나요?
+Kubernetes는 내부 DNS 서버(CoreDNS)를 가지고 있어서, Service 이름을 자동으로 IP로 변환해줍니다.
+</div>
+</details>
+<br>
