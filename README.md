@@ -204,7 +204,6 @@ Kubernetes는 내부 DNS 서버(CoreDNS)를 가지고 있어서, Service 이름�
 </div>
 </details>
 <br>
-
 <details>
 <summary>10강 NodePort Service</summary>
 <div markdown="10">
@@ -221,6 +220,30 @@ http://localhost:30080
 
 # 터미널에서 테스트
 curl http://localhost:30080
+</div>
+</details>
+<br>
+<details>
+<summary>11강 LoadBalancer Service</summary>
+<div markdown="11">
+작업 1: LoadBalancer Service 생성<br>
+작업 2: LoadBalancer 접근
+
+# Service 생성
+kubectl apply -f nginx-service-lb.yaml
+
+# Service 확인 (EXTERNAL-IP 확인)
+kubectl get service nginx-lb
+
+🤔 실제 클라우드에서는?
+
+AWS: ELB(Elastic Load Balancer) 자동 생성
+
+GCP: Cloud Load Balancer 자동 생성
+
+Azure: Azure Load Balancer 자동 생성
+
+비용이 발생합니다!
 </div>
 </details>
 <br>
