@@ -27,3 +27,37 @@ kubectl get ns
 kubectl get all -n kube-system
 </div>
 </details>
+<br>
+<details>
+<summary>3강 첫 번째 Pod 생성하기</summary>
+<div markdown="3">
+
+# nginx Pod 생성
+kubectl run nginx-pod --image=nginx:latest
+
+# Pod 목록 확인
+kubectl get pods
+
+# Pod 상태 확인 (실시간)
+kubectl get pods -w
+
+# Pod 상세 정보
+kubectl describe pod nginx-pod
+
+# Pod 내부 쉘 접속
+kubectl exec -it nginx-pod -- bash
+
+# nginx 설정 파일 확인
+cat /etc/nginx/nginx.conf
+
+# 나가기
+exit
+
+# Pod 로그 확인
+kubectl logs nginx-pod
+
+# Pod 삭제
+kubectl delete pod nginx-pod
+</div>
+</details>
+<br>
