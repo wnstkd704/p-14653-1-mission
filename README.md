@@ -116,3 +116,15 @@ Deployment를 사용하는 이유:
 </div>
 </details>
 <br>
+<details>
+<summary>7강 스케일링 (Scaling)</summary>
+<div markdown="7">
+스케일링이란?<br>
+트래픽이 늘어나면 서버를 더 투입하고, 줄어들면 서버를 줄이는 것을 스케일링이라고 합니다. Kubernetes는 수평 스케일링에 특화되어 있습니다.
+
+수평 스케일링 (Horizontal)	인스턴스 수를 늘림	Pod 3개 → 5개
+
+수직 스케일링 (Vertical)	인스턴스 성능을 높임	CPU 1코어 → 4코어
+
+</div>
+</details>
