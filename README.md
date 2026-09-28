@@ -262,3 +262,26 @@ kubectl exec app-pod -- env | grep APP
 </div>
 </details>
 <br>
+<details>
+<summary>13강 Secret 사용하기</summary>
+<div markdown="13">
+
+</div>
+</details>
+<br>
+<details>
+<summary>14강 PersistentVolume과 PersistentVolumeClaim</summary>
+<div markdown="13">
+왜 PersistentVolume이 필요한가요?<br>
+Pod는 **일시적(ephemeral)**입니다. Pod가 삭제되면 그 안의 데이터도 사라집니다.
+
+비유:
+
+PV (PersistentVolume): 클러스터에 있는 "창고" (관리자가 미리 만들어둠)
+
+PVC (PersistentVolumeClaim): "이 정도 크기의 창고 주세요" 요청서 (개발자가 작성)
+
+Bound: PVC의 요청에 맞는 PV가 연결됨
+</div>
+</details>
+<br>
