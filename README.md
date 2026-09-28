@@ -61,3 +61,28 @@ kubectl delete pod nginx-pod
 </div>
 </details>
 <br>
+<details>
+<summary>4강 YAML 파일로 Pod 정의하기</summary>
+<div markdown="1">
+왜 YAML 파일을 사용이유<br>
+kubectl run으로 Pod를 만들 수 있지만, 실무에서는 거의 항상 YAML 파일을 사용
+
+# Pod 생성
+kubectl apply -f nginx-pod.yaml
+
+# Pod 상태 확인 (-o wide로 더 많은 정보)
+kubectl get pods -o wide
+
+# Pod YAML 확인 (Kubernetes가 추가한 정보 포함)
+kubectl get pod nginx-pod -o yaml
+
+# Pod 삭제 (파일 기반)
+kubectl delete -f nginx-pod.yaml
+
+# 특정 라벨로 Pod 필터링 (Service, Deployment 등이 Pod를 찾을 때 사용) 
+kubectl get pods -l app=nginx
+kubectl get pods -l environment=dev
+
+
+</div>
+</details>
