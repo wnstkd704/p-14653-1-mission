@@ -101,3 +101,18 @@ kubectl get pods -l environment=dev
 </div>
 </details>
 <br>
+<details>
+<summary>6강 Deployment 생성하기</summary>
+<div markdown="6">
+Deployment를 사용하는 이유:
+
+자동 복구: Pod가 죽으면 새로 만듦
+
+스케일링: Pod 수를 쉽게 늘리고 줄임
+
+롤링 업데이트: 무중단으로 새 버전 배포
+
+롤백: 문제 시 이전 버전으로 복원
+</div>
+</details>
+<br>
