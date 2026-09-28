@@ -6,6 +6,11 @@ metadata:
     app: nginx
 spec:
   replicas: 3              # ⭐ Pod를 3개 유지
+  strategy:                # ⭐ 배포(업데이트) 전략
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1          # 동시에 추가로 만들 수 있는 Pod 수
+      maxUnavailable: 0    # 동시에 중단될 수 있는 Pod 수
   selector:                # ⭐ 관리할 Pod를 찾는 조건
     matchLabels:
       app: nginx

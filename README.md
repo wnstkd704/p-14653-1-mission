@@ -128,3 +128,25 @@ Deployment를 사용하는 이유:
 
 </div>
 </details>
+<br>
+<details>
+<summary>8강 롤링 업데이트 (Rolling Update)</summary>
+<div markdown="8">
+롤링 업데이트란?<br>
+새로운 버전의 앱을 배포할 때, 한 번에 모든 Pod를 교체하면 서비스가 중단됩니다.
+
+작업 1: 이미지 버전 업데이트
+
+작업 2: 롤백 (Rollback)
+
+롤링 업데이트의 장점:
+
+무중단 배포: 항상 일부 Pod가 서비스 중
+
+안전한 배포: 문제 발생 시 롤백 가능
+
+점진적 검증: 새 버전이 안정적인지 확인하면서 배포
+
+</div>
+</details>
+<br>
