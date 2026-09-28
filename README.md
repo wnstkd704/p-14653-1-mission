@@ -285,3 +285,31 @@ Bound: PVC의 요청에 맞는 PV가 연결됨
 </div>
 </details>
 <br>
+
+# 전체 애플리케이션 배포 예제
+
+<details>
+<summary>15강 배포할 애플리케이션 구조</summary>
+<div markdown="15">
+
+작업 1: 프로젝트 구조<br>
+k8s-demo/<br>
+├── namespace.yaml          # 네임스페이스 정의<br>
+├── configmap.yaml          # 설정 (필요 시)<br>
+├── secret.yaml             # 비밀 정보 (필요 시)<br>
+├── backend-deployment.yaml # 백엔드 Deployment + Service<br>
+└── frontend-deployment.yaml# 프론트엔드 Deployment + Service<br>
+
+전체 배포 (순서대로)<br>
+kubectl apply -f namespace.yaml<br>
+kubectl apply -f backend-deployment.yaml<br>
+kubectl apply -f frontend-deployment.yaml<br>
+
+디렉토리의 모든 YAML 적용<br>
+kubectl apply -f k8s-demo/<br>
+
+리소스 확인 (demo-app 네임스페이스)<br>
+kubectl get all -n demo-app<br>
+</div>
+</details>
+<br>
