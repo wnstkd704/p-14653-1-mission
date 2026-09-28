@@ -63,7 +63,7 @@ kubectl delete pod nginx-pod
 <br>
 <details>
 <summary>4강 YAML 파일로 Pod 정의하기</summary>
-<div markdown="1">
+<div markdown="4">
 왜 YAML 파일을 사용이유<br>
 kubectl run으로 Pod를 만들 수 있지만, 실무에서는 거의 항상 YAML 파일을 사용
 
@@ -82,7 +82,22 @@ kubectl delete -f nginx-pod.yaml
 # 특정 라벨로 Pod 필터링 (Service, Deployment 등이 Pod를 찾을 때 사용) 
 kubectl get pods -l app=nginx
 kubectl get pods -l environment=dev
-
-
 </div>
 </details>
+<br>
+<details>
+<summary>5강 Multi-Container Pod</summary>
+<div markdown="5">
+왜 하나의 Pod에 여러 컨테이너를 넣나요?<br>
+일반적으로 하나의 Pod에는 하나의 컨테이너를 넣는 것이 권장됩니다. 하지만 밀접하게 협력해야 하는 컨테이너들은 같은 Pod에 넣습니다.
+
+같은 Pod에 넣는 경우:
+
+항상 같이 배포되어야 함
+
+같은 네트워크/스토리지를 공유해야 함
+
+스케일링 단위가 같음
+</div>
+</details>
+<br>
