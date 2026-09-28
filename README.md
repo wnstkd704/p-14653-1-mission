@@ -247,3 +247,18 @@ Azure: Azure Load Balancer 자동 생성
 </div>
 </details>
 <br>
+<details>
+<summary>12강 ConfigMap 사용하기</summary>
+<div markdown="12">
+
+# ConfigMap 생성
+kubectl apply -f app-configmap.yaml
+# Pod 생성
+kubectl apply -f pod-with-configmap.yaml
+# 환경변수 확인
+kubectl exec app-pod -- env | grep APP
+
+볼륨 마운트	파일로 전달, 동적 업데이트	앱이 파일 읽기 지원해야 함
+</div>
+</details>
+<br>
